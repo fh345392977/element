@@ -64,7 +64,6 @@ let nodeIdSeed = 0;
 
 export default class Node {
   constructor(options) {
-    console.log(options)
     this.id = nodeIdSeed++;
     this.text = null;
     this.checked = false;
