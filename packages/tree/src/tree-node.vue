@@ -4,13 +4,13 @@
     @click.stop="handleClick"
     @contextmenu="($event) => this.handleContextMenu($event)"
     v-show="node.visible"
-    :class="{
+    :class="[{
       'is-expanded': expanded,
       'is-current': node.isCurrent,
       'is-hidden': !node.visible,
       'is-focusable': !node.disabled,
       'is-checked': !node.disabled && node.checked
-    }"
+    }]"
     role="treeitem"
     tabindex="-1"
     :aria-expanded="expanded"
@@ -55,6 +55,7 @@
         v-if="!renderAfterExpand || childNodeRendered"
         v-show="expanded"
         role="group"
+        :class="[node.wrapperClass]"
         :aria-expanded="expanded"
       >
         <el-tree-node

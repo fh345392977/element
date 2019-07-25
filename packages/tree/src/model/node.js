@@ -64,6 +64,7 @@ let nodeIdSeed = 0;
 
 export default class Node {
   constructor(options) {
+    console.log(options)
     this.id = nodeIdSeed++;
     this.text = null;
     this.checked = false;
@@ -157,6 +158,10 @@ export default class Node {
 
   get label() {
     return getPropertyFromData(this, 'label');
+  }
+
+  get wrapperClass() {
+    return getPropertyFromData(this, 'wrapperClass');
   }
 
   get key() {
